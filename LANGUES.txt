@@ -1,0 +1,629 @@
+Apprendre des mots rapidement : 
+
+
+V1 :freemium/pub => pub ciblé steve abdelkarim 5000 mots
+
+mindmapping, lire...roadmap
+
+Concepts :: Défilement de mots rapide : lecture rapide, répétition espacée, analyse revoir un mot
+Par thématique
+
+VOCAB:flashcards/learning and memorizing
+Creating sentences 
+Prononciation
+Fun and Community via games
+(Anki)
+
+
+Ikenna => DECK of cards
+1) Netflix /YT (with subtitle) add to your flash card 
+2)voice cards, voice recognition+/
+3)Essentials decks course to get conversationale/
+4)Specialisation : Sport/Bussiness/Art/Food
+6) Guilds, Pods for their city /community+ compete
+... compete with other pods
+7)Translate Tools 
+8) Tinder esque cards, thematics
+
+>Mindmapping
+>5000 mots (mots récurrennt, culture, curiosité, bases)
+>lecture  rapide
+
+>construction de phrases (déterminant connecteurs logiques)
+
+> expression
+>benchmarking (duolinguo), essai, blog , learnchinese-online
+>réseaux sociaux n, personnalité, persona, histoire
+>pub , meetup, caté
+
+
+Reconnaissance image::mot  Audio
+
+Apprendre un mot il faut le réutiliser , comment faire se mécanisme
+
+expression .. lien a un mot
+
+35h sur 20 jours 18 sept
+
+plus Tard
+
+jeux : mots croisés
+
+... Grammaire/Chat 
+
+
+
+
+Traduction /correction du vocab
+
+marketing :: freemium ou  pas 
+
+olicard olivier roland  steve abdelkarim
+
+chat
+
+
+
+PMV 
+
+Mots 
+Défiler une liste de 3000 mots  100/300/500/1000 
+A la lecture 
+Thématiques (nourriture, verbes courrants, form econonomics) 
+
+Dev  : 
+dictionnaire français/anglais 
+A : {
+	"A" : ,
+	 
+	"Apply" : "Candidater",
+	"Alert" : "Alerte";
+	
+}
+
+B : {
+
+ 	"Bean" : "Haricot";
+	"Bargain" : "Marchander";
+	"Build" : "Construire";
+}
+
+C : {
+	"Cake" : "Gateau";
+	"Care" : "Prendre Soin";
+	"Crowdfunding": "financement participatif";
+
+D : {
+	"Debt" : "Dettes";
+	"Duty": "Devoir";
+	"Dessert" : "Dessert";
+}
+
+
+E : {
+	"Excuse Me" :"Pardon";
+	"Eat" : "Manger";
+	"Economics":"Economy"
+}
+
+F : {
+	"Fly" : "Voler";
+	"Flat" : "appartement";
+	"Flavour" : "saveur";
+}
+
+G : {
+	"Growth" : "Croissance";
+	"Gather" : "Rassembler";
+	"Gamble" : "Parier";
+	"Garlic" : "Gingembre";
+}
+
+H : {
+	"Haste" : "Se hâter";
+	"Ham" : "Jambon";
+	"Harm" : "Blesser"
+}
+
+I : {
+	"I
+}
+
+L : {
+	"Lemon" : {
+		"french":"Citron";
+		"seen" : "true;
+	};
+	"Loom" : "Se profiler";
+}
+M : {
+	"Merge": "Fusionner";
+	"Mango" : "Mangue";
+	"Miss" : "Manquer"
+}
+
+N : {
+	"Nuts" : "Noix";
+	"Nurture" : {
+		"french":"Elever";
+		"seen" : "true;	
+	};
+}
+
+O : {
+	"Outlook" :"Perspective";
+	"Open" : "Ouvrir";
+}
+
+P : {
+
+  "Pineapple" :"ananas";
+  "Piece" : "part";
+  "Poll" : "voter";
+  "PLumet" : {
+	"french":"Dégringoler";
+	"seen" : "true;
+};
+  
+}
+
+R : {
+    "Ride" : "Rouler/Monter";
+    "Rice" : {
+		"french":"Riz";
+		"seen" : "true;
+	};
+     "Recession" : "Récession";
+}
+
+S : {
+	"Swim" : 'Nager";
+	"Slide" : "glisser";
+	"Seem" : "Paraître";
+	"Salt" : {
+		"french":"Sel";
+		"seen" : "true;
+	}
+}
+
+
+T : {
+	"Turn" : "Tourner";
+	"Tomato" : "Tomate";
+	"Tumble" : "Dégringoler"
+}
+
+U : {
+	"Urge" : "Presser";
+	"Unite" : "Unir";
+	
+}
+
+V : {
+	"V
+}
+
+
+W : {
+	"Wild" : {
+		"french":"Sauvage";
+		"seen" : "true;
+	};
+}
+
+
+Faire des quizz 
+Remettre les mots déjà vu 15%, mettre les mots moins connus 40%  des cas
+Analyse des mots connus 
+Voir la courbe de mémoire
+Avec les scores, ci dessous choisir la liste de mots : 
+
+1- On pioche dans le dictionnaire plus haut pour le visionnage (85% de mots inconnus ( 1)donc pas dans analytics.seen / 
+									2) ou  la premiere lettre.mot.seen == false)
+						ensuite 15% de mots connus avec en priorité les mots avec le plus d'erreur et 
+						qui datent le plus... (ratio a définir*) --
+Les mots choisis sont mis dans l'array set 
+
+2 - On met démarre l'épreuve selon le niveau de difficulté avec le même set
+A la vue on update dict.mot.seen
+	1) multiple updates 
+Au success on update Analytics.succeed.mot on augmente le nombre de fois de réussites
+On Crée, ou update un timestamp du jour dans Analytics.succeed.historic, le mot y figure, on itère sinon on crée
+
+	2) One Update 
+On prend update le set avec les champs 
+
+Set : {
+ timestamp: 010820
+ ["word": "salt", "seen" :"true", "success":"false"]; 
+}
+
+A la fin du set on Va voir le mot choisi : 
+ on update lettre.mot.seen
+
+  	   historic.timestamp.word
+	   historic.timestamp.success
+	   si success==true => succeed.mot.occurence++  else failed.mot.occurence++
+
+ ( peu importe si intérompu ou pas, en effet le set est sauvegardé a chaque instant avant d'être submit) 
+
+Le fichier analytics est donc sauvegardé
+
+Analytics : {
+	"seen" : 
+		"L" : ["Lemon"];
+		"N" : ["Nurture"];
+		"P" : ["Plummet"];
+		"R" :["Rice"];
+		"S" : ["Salt"];
+		"W" : ["Wild"] // ou mettre seen dans le dict, au moment de piocher on sait quoi exclure
+	}
+	"historic" : {
+		"010820" : {
+			["word" :"Wild", "success": "fail"];
+			["word" :"Rice", "success": "success"];
+			
+			}
+		"020820" :  {
+			"Plummet":{  "success" :true };
+			"Salt"  : {"success":"false"};
+			"Lemon": {"success": "success"};
+			"Nurture": {"success": "success"}
+		};
+		}
+
+	"succeed" : {"
+		"Rice":
+		{
+			"occurence" : 2;
+			"last_time" : 010820";
+			
+		}
+		;
+		 "Lemon":
+		{
+			"occurence" : 3;
+			"last_time" : 020820";
+			
+		}
+	}
+
+	"failed" : {
+		"Salt":
+		{
+			"occurence" : 2;
+			"last_time" : 010820";
+			
+		}
+		;
+		 "Wild":
+		{
+			"occurence" : 4;
+			"last_time" : 020820";
+			
+		}
+	}
+
+}
+
+
+4- Constitution du Set
+
+Une Partie Unseen 
+Une Partie Seen est update pour accélérer le process 
+A chaque Partie finie le on update un tableau ressemblant au dict mais n'incluant que les unseen et les seen
+Construit sur le modèle du dict original
+On parcours le dict  lettre.mot.position.word avec lettre.mot.position.seen selon le résultat on ajoute :
+a dict_seen.seen.lettre.mot ou a unseen
+A chaque tirage on va chercher le mot trouvé et update le dict originel
+
+
+Dict_Seen {
+
+	"seen" : {
+		"A" : ["apple"];
+		"B" : ["banana"];
+		"C" : ["cattle"];
+	}
+
+	"unseen" : {
+		"A" : ["attack"];
+		"B" : ["beatle"];
+		"C" : ["character"];
+	}
+}
+
+
+Fonctions a créer ,
+ update_dict(Set)/update_dict_seen(Set)/update_analytics(Set)
+Random_position(Set) 
+Iterate Array ( A à Z) puis premier à dernier mot
+createSet(dict_seen) UnSeen prendre 85% du nombre de mots défini/ Seen prendre 15% du nombre de mots défini
+ScoreWordSeen(word): 
+	see dict_seen.seen.word (voir si on peut pas merge analytics et dict_seen,en mode dict_analytics)
+	dict_seen.seen.word.timestamp / dict_seen.seen.word.failed / dict_seen.seen.word.success
+	nombre de jours * ratio (fail/success)
+
+placer un mot dans le dico .. placeword, 
+trier le dico 
+ecrire dans le dico
+
+
+STEPS 
+A)Dico OK 
+1)retriuver un valeur Manuellement OK, il faut redéfinir le chemin 
+
+dict : {
+  "A" : {
+	0 : {
+	   "eng" :" potato",
+	   "fr" : "pomme de terre"
+	}
+      }
+}
+
+On appelle la donnée en faisant dict.A au lieu de dict.letters["A"]  on a ainsi dict.A[0].eng pour avoir potato
+On peut alors retrouver un mot avec son ID
+
+2)trier le dico
+3)ecrire dans le dico
+4)créer un set et tester le jeu la boucle prinncipale/affichage du score/bonne réponse
+
+B)créer des structures complémentaires
+1)Dict analytics
+
+C
+
+beta, importance du mot
+
+
+Construction de Phrases (Bêta) => Une langue = Une structure 
+Chat (Bêta) => Apprentissage par les pairs ... On dit quelque chose dans la langue et on propose une traduction.( on s'évalue mutuellement)7
+
+Financement =>
+Pub intempestive à la fin de chaque game, ou tous les 3 games
+
+
+
+DATA Structure  : 
+
+
+"historic" : {
+		"010820" : {
+			["word" :"Wild", "success": "fail"];
+o+à)89465
+7^=$
+/
+
+
+
+
+
+/Cette structure avec ["word" : "Wild"] rajoute de la complexité , de plus une structure en timestamp n'est pas adaptée
+à une recherche selon le mot/ plutot pour une recherche selon l'historique de jeu
+
+Une structure comme cela  est plus simple:
+
+  "historic" : {
+		"010820" : {
+			"Wild":{ "success": false}; 
+
+Pour dict_seen cette structure est meilleure pour définir le Set : 
+		
+		Dict_Seen {
+
+			"seen" : {
+				"A" : {
+					"apple" : {
+							timestamp :010220,
+
+							failed : 2,
+
+							succeed : 3,
+						}
+
+
+timestamp :["010220":false,"050220":true,"070220":false,"080220":true]
+
+structures => 
+Historic & success (mesurer l'activité dans le temps de manière numéraire dans dict_seen et datée dans dict_analytics.historic)
+Seen not seen => dict_analytics
+dictionnaire de mots 
+
+
+Full structure dict_analytics
+
+
+
+Dict_analytics {
+
+			"seen" : {
+				"A" : {
+					"apple" : {
+							timestamp :["010220":false,"050220":true,"070220":false,"080220":true],
+							failed : 2,
+							succeed : 3,
+						}
+					}
+				}
+
+			"unseen" : {
+				"A" : {
+					"adamant" : {
+							timestamp :["010220":false,"050220":true,"070220":false,"080220":true]
+							failed : 6,
+							succeed : 3,
+						}
+					}
+				}
+			
+			"historic" : {
+					"010820" : {
+							"Wild":{ "success": false}; 
+
+ERROR Bad structure ... 
+
+See this
+{
+  "squadName": "Super hero squad",
+  "homeTown": "Metro City",
+  "formed": 2016,
+  "secretBase": "Super tower",
+  "active": true,
+  "members": [  // "A" : [{word, id, seen, fr , eng}]
+    {
+      "name": "Molecule Man",
+      "age": 29,
+      "secretIdentity": "Dan Jukes",
+      "powers": [
+        "Radiation resistance",
+        "Turning tiny",
+        "Radiation blast"
+      ]
+    },
+    {
+      "name": "Madame Uppercut",
+      "age": 39,
+      "secretIdentity": "Jane Wilson",
+      "powers": [
+        "Million tonne punch",
+        "Damage resistance",
+        "Superhuman reflexes"
+      ]
+    },
+    {
+      "name": "Eternal Flame",
+      "age": 1000000,
+      "secretIdentity": "Unknown",
+      "powers": [
+        "Immortality",
+        "Heat Immunity",
+        "Inferno",
+        "Teleportation",
+        "Interdimensional travel"
+      ]
+    }
+  ]
+}
+
+
+superHeroes['members'][1]['powers'][2] = l'expression suivante pointe vers le troisième superpouvoir du second super héros présent dans la liste :
+
+
+Schéma
+"A" : [{word, id, seen, fr , eng}]
+
+
+
+"W" : [
+	{
+		"id" : 1,
+		"eng" : "word",
+		"fr"  : "mot",
+		"seen" : true
+	},
+
+	
+
+5/09/20 // Create a set of words
+    function createSet (dict,setLength,rank,letters) {
+        
+        let i = 0;
+        let createdSet = [];
+        
+        while(i<setLength-1){
+            console.log("the letter : "+letters[i]+", the rank : "+rank[i]) //a[0][1];
+            //create the string "dict"+letters[i]+"["+rank[i]+"]";
+            if(dict[letters[i]][rank[i]] !== undefined){
+            createdSet.push(dict[letters[i]][rank[i]])
+            }
+            else {
+                console.log("word with letter "+letters[i]+" and "+rank[i]+" is undefined")
+            }
+            i++;
+        }
+        createdSet.push(dict["W"][1]);
+        return createdSet;
+    } 
+
+
+createSet V2 : //adding try catch, doesnt stop the code
+
+ while(i<setLength-1){
+            console.log("the letter : "+letters[i]+", the rank : "+rank[i]) //a[0][1];
+            //create the string "dict"+letters[i]+"["+rank[i]+"]";
+            try {
+            createdSet.push(dict[letters[i]][rank[i]])
+            }
+            catch(err) {
+                console.log(err+": word with letter "+letters[i]+" and "+rank[i]+" is undefined")
+            }
+            i++;
+        }``
+
+
+060920
+
+//verify if there is not a undefined value in the set
+    function verifySet (dict) {
+        let i = 0;
+        let err= [];
+        while(i< dict.length){
+            if(dict[i]== undefined){
+                err.push(i);
+            }
+            i++;
+        }
+        return err;
+    }
+    //create an error message, set is clean by default
+    function errorSet (err,letters) {
+        let messageSet = "Set is clean"
+        let i = 0;
+        if(err.length>0){
+            messageSet = "these indexes have an issue : "
+            while(i<err.length){
+                messageSet += "letter is "+letters[i]+" and index "+err[i];
+                if( i<err.length-1){
+                    messageSet +=", ";
+                }
+                i++;
+            }
+        }
+        
+        return messageSet;
+    }
+
+	I can detect where error comes from.. 
+	verifySet, get the index which have errors 
+	errorSet, Create message error with more information letter and index
+
+
+	VISUAL 
+
+	DEMO , 3 SCREEN : 
+	=> INTRODUCTION OR MESSAGE SCREEN setTimeout to start
+	=> READ, setInterVal Between words ( boucle)
+	=> WRITE, set a response and if right pass to the other (boucle)
+
+	060920fin
+	
+	var i =0;
+   let readProcess=setInterval(function(){ 
+       console.log(i);
+        word.innerHTML= newSet[i].eng;
+        trad.innerHTML= newSet[i].fr;
+        i++; 
+        if(i==newSet.length){
+            clearInterval(readProcess);
+            console.log("END OF GAME")
+        }
+        
+    }, 3500); 
+
+    /*process = SetInterval ( func(){
+    ....opérations;
+    ...clearInterval(process)// clearInterval lors d'un process qui s'arrete seul doit être dans la function
+
+    } , 1000 )
+    */

@@ -1,0 +1,52 @@
+
+
+/*GLOBALS*/
+
+li {
+    list-style-type: none;
+}
+
+a {
+    text-decoration:none;
+}
+
+.grid_container {
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+}
+
+.button_message{
+    grid-column: 4;
+}
+
+header {
+    display:flex;
+    justify-content: space-around;
+}
+
+
+#menu {
+    display: flex;
+    width:50vw;
+    justify-content: space-around;
+}
+
+#statement {
+    display:flex;
+    flex-direction:column;
+    justify-content: center;
+    align-items: center;
+    height:50vh
+}
+
+
+
+/*GAME*/
+
+#game {
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height:50vh
+}
