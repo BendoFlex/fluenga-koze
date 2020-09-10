@@ -9,7 +9,7 @@ window.onload = function() {
         let i = 0;
         let createdSet = [];
         
-        while(i<setLength-1){
+        while(i<setLength){
             console.log("the letter : "+letters[i]+", the rank : "+rank[i]) //a[0][1];
             //create the string "dict"+letters[i]+"["+rank[i]+"]";
             try {
@@ -20,7 +20,7 @@ window.onload = function() {
             }
             i++;
         }
-        createdSet.push(dict["W"][1]);
+       
         return createdSet;
     }
 
@@ -78,6 +78,12 @@ window.onload = function() {
                         },
 
                         {
+                            "eng":"Altough",
+                            "fr" :"bien que",
+                            "seen" : true
+                        },
+
+                        {
                             "eng":"Alert",
                             "fr" : "Alerte",
                             "seen" : false
@@ -112,11 +118,16 @@ window.onload = function() {
                         "Economics":"Economy"
                     },
                     
-                    "F" : {
-                        "Fly" : "Voler",
-                        "Flat" : "appartement",
-                        "Flavour" : "saveur",
-                    },
+                    "F" : [
+                        {
+                            "eng":"forward",
+                            "fr" :"En avant",
+                            "seen" :true
+                        },
+                        {"Fly" : "Voler"},
+                        {"Flat" : "appartement"},
+                        {"Flavour" : "saveur"},
+                    ],
                     
                     "G" : {
                         "Growth" : "Croissance",
@@ -197,48 +208,64 @@ window.onload = function() {
                     
                     
                     
-                    "R" : {
-                        0 : {
+                    "R" : [
+                         {
                             "eng": "Recession" ,
                             "fr": "Récession",
                             "seen" :false
                         },
-                        "Ride" : "Rouler/Monter",
-                        1 : {
+                        {
+                            "eng":"reminescent",
+                            "fr" :"rappelant",
+                            "seen":true
+                        },
+                        
+                        {
+                            "eng":"Ride",
+                            "fr" : "Rouler/Monter",
+                            "seen" :false
+                        },
+                         {
                             "eng" : "Rice",
                             "french":"Riz",
                             "seen" : true,
                         },
                         
-                    },
+                    ],
                     
-                    "S" : {
-                        0 : {
+                    "S" : [
+                         {
                             "eng": "Salt",
                             "fr":"Sel",
                             "seen" : true,
                         },
 
-                        1 : {
+                        {
+                            "eng": "Shelve",
+                            "fr":"Etagère",
+                            "seen" : true,
+                        },
+
+                         {
                             "eng":"Swim",
                             "fr" : "Nager",
                             "seen" :false,
                         },
 
-                        2 : {
+                         {
                             "eng":"Slide",
                             "fr" : "glisser",
                             "seen" : false,
                         },
                         
                         
-                        3 : {
+                         {
                             "eng":"Seem",
                             "fr" : "Paraître",
                             "seen" :false
                         }
                        
-                    },
+                    ],
                     
                     
                     "T" : {
@@ -281,6 +308,24 @@ window.onload = function() {
                 
                     "W" : [
                             {
+                                "id" : 1517,
+                                "eng" : "Wage",
+                                "fr"  : "Salaire",
+                                "seen" : true
+                            },
+                            {
+                                "id" : 1518,
+                                "eng" : "To Wag",
+                                "fr"  : "Secouer",
+                                "seen" : true
+                            },
+                            {
+                                "id" : 1519,
+                                "eng" :"Wholesaler",
+                                "fr" : "Grossiste",
+                                "seen" :true
+                            },
+                            {
                                 "id" : 2,
                                 "eng" : "Word",
                                 "fr"  : "mot",
@@ -293,16 +338,21 @@ window.onload = function() {
                                 "fr":"Sauvage",
                                 "seen" : true,
                             },
+
+                           
+
                         ],
                         
                     }
 
     
 
-
+     var path = window.location.pathname;
+     var page = path.split("/").pop();    
+    
 
     
-    
+    if(page == "demo.php"){
     const write = document.getElementById("write");
     write.style.display="none";
     const message = document.getElementById("message");
@@ -310,9 +360,15 @@ window.onload = function() {
     const read = document.getElementById("read");
     read.style.display="none";
 
+    const button_message = document.getElementsByClassName("button_message")[0];
+    button_message.onclick = readProcess;//linked
+    }
+   
+    
+
     const setLength = 20; 
-    const letters = ["A","O","R","S","T","U","R","W","S","O","A","O","R","S","T","U","W","S","T","U"]//lettres
-    const rank = [0,1,0,1,1,0,0,1,0,1,1,1,0,1,0,1,0,1,1,0];//rang
+    const letters = ["A","O","R","S","T","F","R","W","S","O","A","O","R","S","T","U","W","S","T","W"]//lettres
+    const rank = [2,1,1,1,1,0,0,1,0,1,1,1,0,1,0,1,0,1,1,2];//rang
 
     console.log("there is "+countElements(letters)+" letters");
     console.log("there is "+countElements(rank)+" ranks\n");
@@ -324,19 +380,22 @@ window.onload = function() {
     const indexErrors = verifySet(newSet);
     console.log(errorSet(indexErrors,letters));
     
-    const button_message = document.getElementsByClassName("button_message")[0];
-    button_message.onclick = readProcess;//linked
+    
+  
    
     
-    const word = document.getElementsByClassName("word")[0];
-    const trad = document.getElementsByClassName("trad")[0];
+    const word = document.getElementsByClassName("word");
+    const trad = document.getElementsByClassName("trad");
 
-
-   
+    if(page == "cards.php"){
+    word[0].innerHTML=newSet[0].eng;
+    trad[0].innerHTML=newSet[0].fr;
+    console.log(newSet[0].eng)
+    }
 
     // after that I can Launch the process
     //Defiling the words
-    
+    console.log("window name is : "+page);
     
     function readProcess(){//works and so far isolated 070920
         message.style.display ="none";
@@ -344,8 +403,8 @@ window.onload = function() {
         var i =0;
         let readProcess=setInterval(function(){ 
             console.log(i);
-            word.innerHTML= newSet[i].eng;
-            trad.innerHTML= newSet[i].fr;
+            word[0].innerHTML= newSet[i].eng;
+            trad[0].innerHTML= newSet[i].fr;
             i++; 
                 if(i==newSet.length){
                     clearInterval(readProcess);
@@ -354,11 +413,11 @@ window.onload = function() {
                     read.style.display ="none";
                 }
                 
-            }, 200); 
+            }, 3000); 
         
     }
    
-   console.log(HTMLButtonElement.onclick)
+  
 
     /*process = SetInterval ( func(){
     ....opérations;

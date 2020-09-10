@@ -12,7 +12,7 @@ VOCAB:flashcards/learning and memorizing
 Creating sentences 
 Prononciation
 Fun and Community via games
-(Anki)
+(Anki)  
 
 
 Ikenna => DECK of cards
@@ -627,3 +627,15 @@ createSet V2 : //adding try catch, doesnt stop the code
 
     } , 1000 )
     */
+
+	/* usage de nth:child
+	.cards-pan :nth-child(2n) {
+    grid-row :2;
+    grid-column: 4;
+    background-color:green
+}	*/
+
+
+var path = window.location.pathname; // control the flow in function of pages
+  var page = path.split("/").pop();  //Take only the last part .pop() take the last part
+    if(page == "demo.php"){
