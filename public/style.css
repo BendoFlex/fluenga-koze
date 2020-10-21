@@ -1,0 +1,115 @@
+
+
+/*GLOBALS*/
+
+li {
+    list-style-type: none;
+}
+
+a {
+    text-decoration:none;
+}
+
+.grid_container {
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+}
+
+.button_message{
+    grid-column: 4;
+}
+
+header {
+    display:flex;
+    justify-content: space-around;
+}
+
+
+#menu {
+    display: flex;
+    width:50vw;
+    justify-content: space-around;
+}
+
+#statement {
+    display:flex;
+    flex-direction:column;
+    justify-content: center;
+    align-items: center;
+    height:50vh
+}
+
+
+
+/*GAME*/
+
+#game {
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height:50vh
+}
+
+/*CARDS*/
+
+#main-cards {
+    display:grid;
+    grid-template-columns: 20% 20% 20% 20% 20%;
+}
+
+aside{
+    grid-column: 1;
+}
+
+#cards {
+    display:grid;
+    grid-column:2/6;
+    grid-template-columns:25% 25% 25% 25%;
+}
+
+.cards-add {
+    display:grid;
+    grid-template-columns: 25% 25% 25% 25%;
+    grid-column : 4/5;
+    border: 1px solid black;
+    
+}
+
+.cards-add button {
+    grid-column:3;
+}
+
+.cards-pan {
+    grid-column :1/6;
+    display:grid;
+    grid-template-columns: 20% 20% 20% 20% 20%;
+    grid-template-rows: 50% 50%;
+    border:1px solid black;
+    padding:2vh
+}
+
+.card  {
+    background-color:red;
+    height:30vh;
+    width:10vw;
+    margin:2vw
+}
+/*nth-child*/
+.cards-pan :nth-child(n) { 
+    grid-column: 2;
+}
+
+.cards-pan :nth-child(2n) {
+    grid-row :1;
+    grid-column: 4;
+    background-color:green
+}
+
+aside h1 {
+    font-size : 20px;
+}
+
+aside h2 {
+    font-size : 15px;
+}
